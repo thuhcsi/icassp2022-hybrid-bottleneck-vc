@@ -8,8 +8,8 @@ import librosa.filters
 import numpy as np
 from scipy.io import wavfile
 
-wav_path = './audios/PPG_BN/CTC'
-save_path = './audios/PPG_BN_/CTC'
+wav_path = './audios/PPG_BN/CE'
+save_path = './audios/PPG_BN_/CE'
 def save_wav(wav, path, sr, k=None):
   if k:
     norm_wav = wav * 32767 / max(0.01, np.max(np.abs(wav))) * k
@@ -25,4 +25,4 @@ if __name__=='__main__':
         sav_path = os.path.join(save_path,wav)
         sig, _ = librosa.load(wav_,16000)
 
-        save_wav(sig,sav_path,sr=16000,k=0.1)
+        save_wav(sig,sav_path,sr=16000,k=0.15)
